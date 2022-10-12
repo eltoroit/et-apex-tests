@@ -1,0 +1,1 @@
+This file helps make a commit since Git does not create a commit when there is nothing to commit :-)
