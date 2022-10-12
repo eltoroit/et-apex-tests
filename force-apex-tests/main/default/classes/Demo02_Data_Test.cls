@@ -6,6 +6,9 @@ public with sharing class Demo02_Data_Test {
         List<Product_Family__c> productFamilies = Test.loadData(Product_Family__c.sObjectType, 'testDataProductFamily');
         List<Product__c> products = Test.loadData(Product__c.sObjectType, 'testDataProduct');
         System.assertEquals(products.size(), countProducts());
+        for (Product__c product : getProducts()) {
+            System.assertNotEquals(null, product.Product_Family__r.Name);
+        }
     }
 
     @IsTest
@@ -21,6 +24,10 @@ public with sharing class Demo02_Data_Test {
 
     @IsTest
     private static void assertInsertedProducts() {
+        for (Product__c product : getProducts()) {
+            System.assertNotEquals(null, product.Product_Family__r.Name);
+            System.assert(product.Description__c.startsWith('Lorem ipsum'));
+        }
     }
 
     private static Integer countProducts() {
