@@ -13,7 +13,9 @@ private with sharing class Demo03_AsyncApex_Test {
     @isTest
     private static void testFuture() {
         Map<Id, Account> mapAccounts = new Map<ID, Account>([SELECT Id FROM Account]);
+        Test.startTest();
         Demo03_AsyncApex.futureMethod(mapAccounts.keySet());
+        Test.stopTest();
         for (Account account : [SELECT Id, Site FROM Account]) {
             System.assertEquals('Future', account.Site);
         }
@@ -22,7 +24,9 @@ private with sharing class Demo03_AsyncApex_Test {
     @isTest
     private static void testQueueable() {
         List<Account> accounts = [SELECT Id FROM Account];
+        Test.startTest();
         System.enqueueJob(new Demo03_AsyncApex(accounts));
+        Test.stopTest();
         for (Account account : [SELECT Id, Site FROM Account]) {
             System.assertEquals('Queueable', account.Site);
         }
