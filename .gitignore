@@ -1,0 +1,6 @@
+# Ignore these files...
+.sf/*
+.sfdx/*
+.DS_Store
+jsconfig.json
+testPush/*
