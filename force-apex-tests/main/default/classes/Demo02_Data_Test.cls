@@ -2,6 +2,10 @@
 public with sharing class Demo02_Data_Test {
     @TestSetup
     static void makeData(){
+        System.assertEquals(0, countProducts());
+        List<Product_Family__c> productFamilies = Test.loadData(Product_Family__c.sObjectType, 'testDataProductFamily');
+        List<Product__c> products = Test.loadData(Product__c.sObjectType, 'testDataProduct');
+        System.assertEquals(products.size(), countProducts());
     }
 
     @IsTest
@@ -13,10 +17,12 @@ public with sharing class Demo02_Data_Test {
     }
 
     private static Integer countProducts() {
-        return 0;
+        Integer count = [SELECT COUNT() FROM Product__c];
+        return count;
     }
 
     private static List<Product__c> getProducts() {
-        return new List<Product__c>();
+        List<Product__c> products = [SELECT Id, Description__c, Product_Family__r.Name FROM Product__c];
+        return products;
     }
 }
