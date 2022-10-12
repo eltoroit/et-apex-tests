@@ -1,7 +1,7 @@
 public class Demo01_SimpleMath {
 
     // This line is a comment :-)
-
+    
     public Integer numbersMinus(Integer i, Integer j) {
         Integer result = i - j;
         System.debug('i - j => ' + i + ' - ' + j + ' = ' + result);
@@ -9,7 +9,7 @@ public class Demo01_SimpleMath {
     }
 
     public Integer numbersPlus(Integer i, Integer j) {
-        Integer result = i - j;
+        Integer result = i + j;
         System.debug('i + j => ' + i + ' + ' + j + ' = ' + result);
         return result;
     }
