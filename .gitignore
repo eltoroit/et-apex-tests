@@ -33,9 +33,9 @@ ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
 
-# VS Code project settings
-.vscode/*
-!.vscode/extensions.json
+# # VS Code project settings
+# .vscode/*
+# !.vscode/extensions.json
 
 # Codecov
 coverage
@@ -43,3 +43,6 @@ coverage
 # UTAM
 pageObjects
 .env
+
+# Test Push
+testPush*

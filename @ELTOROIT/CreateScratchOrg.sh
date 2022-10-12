@@ -1,8 +1,3 @@
-Metadata cloned from [this repo](https://github.com/trailheadapps/ebikes-lwc)
-
-To create a new scratch org, execute [this script](/@ELTOROIT/CreateScratchOrg.sh):
-
-```
 echo Create a scratch org
 sfdx force:org:create --setdefaultusername --definitionfile=config/project-scratch-def.json --setalias=soEBikes --durationdays=1
 
@@ -26,6 +21,3 @@ sfdx force:community:publish --name=E-Bikes
 
 echo "Deploy metadata for the Experience Cloud guest user profile"
 sfdx force:mdapi:deploy --deploydir=guest-profile-metadata --wait=10
-```
-
-Slides are found [here](https://docs.google.com/presentation/d/1HXJVkHUSOtNqvtIWWYaDrf8NYePT7H9_GF8ZylvngKE/view)
