@@ -10,6 +10,13 @@ public with sharing class Demo02_Data_Test {
 
     @IsTest
     private static void updateProducts() {
+        List<Product__c> products = getProducts();
+        Test.startTest();
+        update products;
+        Test.stopTest();
+        for (Product__c product : getProducts()) {
+            System.assert(product.Description__c == 'Default description');
+        }
     }
 
     @IsTest
